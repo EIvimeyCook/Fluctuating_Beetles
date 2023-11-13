@@ -3,19 +3,6 @@ source("code/01-load_packages.R")
 source("code/02-load_clean_data.R")
 
 ###Body mass#####
-distribeaut_shape(data = body_mass,
- xvar = "env",
-  yvar = "beet_mass",
-   fillvar = "regime",
-    shapevar = "sex") +
-  labs(x = "Assay Environment",
-   y = "Individual Body Mass (g)",
-    fill = "Thermal Regime",
-     colour = "Thermal Regime",
-      shape = "Sex") +
-  facet_grid(.~pop)
-  scale_shape_manual(values = c(25, 21))
-  
 #emmeans plot
   em1a <- emmeans(m1a,
                   specs = ~ sex * pop * regime * env)
@@ -107,15 +94,6 @@ ggsave(path = "figures/",
     dpi = 300)
 
 ###LRS#####
-lrs <-
-distribeaut(data = repro_wide,
- xvar = "env",
-  yvar = "lrs",
-   fillvar = "regime") +
-  labs(x = "Assay Environment",
-   y = "Lifetime Reproductive Success",
-    fill = "Thermal Regime",
-    colour = "Thermal Regime")
 
 #emmeans plot
   em1a <- emmeans(list_lrs_disp[[7]],
@@ -233,17 +211,6 @@ ggsave(path = "figures/",
 
 
 ###Development Time####
-distribeaut_shape(data = devtime,
- xvar = "env",
-  yvar = "dt",
-   fillvar = "pop",
-    shapevar = "sex") +
-  labs(x = "Assay Environment",
-   y = "Development Time (Days)",
-    fill = "Genetic Background",
-     colour = "Genetic Background",
-      shape = "Sex")
-
 #emmeans plot
 em1a <- emmeans(m1a,
                 specs = ~ sex * pop * regime * env)
