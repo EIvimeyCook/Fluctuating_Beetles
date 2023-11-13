@@ -36,8 +36,7 @@ tab_model(m1a,
           show.se = TRUE,
           show.r2 = FALSE,
           show.stat = TRUE,
-          show.icc = FALSE,
-          file = "outputs/four_way_mass.doc")
+          show.icc = FALSE)
 
 
 #anova of full results
@@ -66,8 +65,7 @@ tidy(car::Anova(glmmTMB(beet_mass_mg ~
                                        pop = "contr.sum",
                                        sex = "contr.sum")), type = "III")) %>%
   mutate_if(is.numeric, round, 5) %>%
-  print() %>%
-  write_csv("outputs/mass/four_way_mass_anova.csv")
+  print()
 
 #model means - no bias adjustment needed
 em1a <- emmeans(m1a,
@@ -75,16 +73,13 @@ em1a <- emmeans(m1a,
 
 confint(em1a, type = "response", calc = c(n = ~.wgt.), adjust = "mvt")
 
-
-
 #model contrasts
 summary(contrast(em1a, "pairwise",
                  combine = TRUE,
                  simple = list("pop","sex", "regime", "env", c("regime", "env")),
                  adjust = "mvt"),
         type = "response", infer = c(TRUE, TRUE)) %>%
-  print() %>%
-  write_csv("outputs/four_way_mass_emmeans.csv")
+  print()
 
 
 #contrast of sex contrast
@@ -92,8 +87,7 @@ pairs(contrast(em1a, "consec",
                  combine = TRUE,
                  simple = list("sex"),
                  adjust = "mvt"), by = NULL) %>%
-  print() %>%
-  write_csv("outputs/four_way_mass_emmeans_contrast_contrast.csv")
+  print()
 
 # DT-Four ######
 
@@ -130,8 +124,7 @@ tab_model(m1a,
           show.se = TRUE,
           show.r2 = FALSE,
           show.stat = TRUE,
-          show.icc = FALSE,
-          file = "outputs/four_way_dt.doc")
+          show.icc = FALSE)
 
 
 #anova of full results
@@ -160,8 +153,7 @@ tidy(car::Anova(glmmTMB(log(dt) ~
                                        pop = "contr.sum",
                                        sex = "contr.sum")), type = "III")) %>%
   mutate_if(is.numeric, round, 5) %>%
-  print() %>%
-  write_csv("outputs/four_way_dt_anova.csv")
+  print()
 
 #model means - no bias adjustment needed
 em1a <- emmeans(m1a,
@@ -176,8 +168,7 @@ summary(contrast(regrid(em1a), "pairwise",
                  simple = list("pop","sex", "regime", "env",c("regime", "env")),
                  adjust = "mvt"),
         type = "response", infer = c(TRUE, TRUE)) %>%
-  print() %>%
-  write_csv("outputs/four_way_dt_emmeans.csv")
+  print()
 
 
 #contrast of sex contrast
@@ -185,8 +176,7 @@ pairs(contrast(em1a, "consec",
                combine = TRUE,
                simple = list("sex"),
                adjust = "mvt"), by = NULL) %>%
-  print() %>%
-  write_csv("outputs/four_way_dt_emmeans_contrasts.csv")
+  print()
 
 # LRS_Three  #######
 
@@ -253,7 +243,7 @@ testZeroInflation(s1a)
 testDispersion(s1a)
 
 #modelchecker code
-modelchecker(list_lrs, filename = "outputs/prelim.three_")
+modelchecker(list_lrs)
 
 #fit with zero-inflated parameter - zi detected
 
@@ -301,7 +291,7 @@ list_lrs[[39]] <-glmmTMB(lrs ~ regime + env + pop + regime:env + regime:pop + en
 
 #model ranking via aic
 model.sel(list_lrs, rank = "AIC")
-modelchecker(list_lrs, filename = "outputs/zi.three_")
+modelchecker(list_lrs)
 
 #best model is compois w/ env zi
 summary(list_lrs[[26]])
@@ -344,7 +334,7 @@ list_lrs_disp[[7]] <-glmmTMB(lrs ~ regime + env + pop + regime:env + regime:pop 
 
 #model ranking via aic
 model.sel(list_lrs_disp, rank = "AIC")
-modelchecker(list_lrs_disp, filename = "outputs/disp.three_")
+modelchecker(list_lrs_disp)
 
 #best model is compois w/ env zi
 summary(list_lrs_disp[[7]])
@@ -363,8 +353,7 @@ tab_model(list_lrs_disp[[7]],
           show.se = TRUE,
           show.r2 = FALSE,
           show.stat = TRUE,
-          show.icc = FALSE,
-          file = "outputs/three_way_lrs.doc")
+          show.icc = FALSE)
 
 #anova of full results
 tidy(car::Anova(glmmTMB(lrs ~
@@ -384,8 +373,7 @@ tidy(car::Anova(glmmTMB(lrs ~
                                        env = "contr.sum",
                                        pop = "contr.sum")), type = "III")) %>%
   mutate_if(is.numeric, round, 5) %>%
-  print() %>%
-  write_csv("outputs/three_way_lrs_anova.csv")
+  print()
 
 #model means - no bias adjustment needed
 em1a <- emmeans(list_lrs_disp[[7]],
@@ -407,8 +395,7 @@ summary(contrast(regrid(em1a), "pairwise",
                  simple = list("pop", "regime", "env", c("regime", "env")),
                  adjust = "mvt"),
         type = "response", infer = c(TRUE, TRUE)) %>%
-  print() %>%
-  write_csv("outputs/three_way_lrs_emmeans.csv")
+  print()
 
 # ASR_Four########
 
@@ -499,7 +486,7 @@ testZeroInflation(s1a)
 testDispersion(s1a)
 
 #modelchecker code
-modelchecker(list_asr, filename = "outputs/prelim.asr.four_")
+modelchecker(list_asr)
 
 #model selection on zeroinflation parameters
 
@@ -595,8 +582,7 @@ tab_model(list_asr[[49]],
           show.se = TRUE,
           show.r2 = FALSE,
           show.stat = TRUE,
-          show.icc = FALSE,
-          file = "outputs/four_way_disp_asr.doc")
+          show.icc = FALSE)
 
 #anova of full results
 tidy(car::Anova(glmmTMB(offspring ~ regime + env + pop + day + regime:env + regime:pop +  
@@ -607,8 +593,7 @@ tidy(car::Anova(glmmTMB(offspring ~ regime + env + pop + day + regime:env + regi
                         zi = ~env,
                         family = compois), type = "III")) %>%
   mutate_if(is.numeric, round, 5) %>%
-  print() %>%
-  write_csv("outputs/four_way_asr_anova.csv")
+  print()
 
 #model means - no bias adjustment needed
 em1a <- emtrends(list_asr[[46]],
@@ -624,6 +609,5 @@ summary(contrast(em1a, "consec",
                  simple = list("pop", "regime", "env"),
                  adjust = "mvt"),
         type = "response", infer = c(TRUE, TRUE)) %>%
-  print() %>%
-  write_csv("outputs/four_way_asr_emmeans.csv")
+  print()
 
