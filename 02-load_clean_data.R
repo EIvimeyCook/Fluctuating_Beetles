@@ -4,7 +4,7 @@ source("code/01-load_packages.R")
 ##data for all the traits##
 
 ##Load body mass data###
-body_mass <- read_csv("data/processed/bodymass.csv") %>%
+body_mass <- read_csv("bodymass.csv") %>%
   convert(fct(Pop, Treat, Rep, Sex)) %>%
   mutate(Jar = paste(Pop, Treat, Rep, sep = "-")) %>%
   convert(fct(Jar)) %>%
@@ -28,7 +28,7 @@ body_mass <- read_csv("data/processed/bodymass.csv") %>%
 
 ###Load and create LRS data###
 #Change the data to create LRS - no sex as sex not in development time file
-development_time <- read_csv("data/processed/lifehistory.csv") %>%
+development_time <- read_csv("lifehistory.csv") %>%
   convert(fct(Pop, Treat, Rep)) %>%
   mutate(MatID = paste(Pop, Treat, Rep, VC, sep = "-")) %>%
   mutate(Jar = paste(Pop, Treat, Rep, sep = "-")) %>%
@@ -85,7 +85,7 @@ group_by(pop, env, regime, mat_id, rep, jar, day_egg) %>%
 
 ###Development time###
 #convert the data and remove non zeros
-development_time <- read_csv("data/processed/lifehistory.csv") %>%
+development_time <- read_csv("lifehistory.csv") %>%
   convert(fct(Pop, Treat, Rep)) %>%
   mutate(MatID = paste(Pop, Treat, Rep, VC, sep = "-")) %>%
   mutate(Jar = paste(Pop, Treat, Rep, sep = "-")) %>%
