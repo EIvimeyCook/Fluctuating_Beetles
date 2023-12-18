@@ -136,6 +136,6 @@ for (x in seq_len(nrow(development_time))) {
 
 devtime <- data.table::rbindlist(dtlist)
 
-#remove individuals where sex is not known as this is probably an error?
+#remove individuals where sex is not known
 devtime %<>% convert(fct(sex)) %>%
   filter(sex != "NA")
