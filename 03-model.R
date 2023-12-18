@@ -375,9 +375,14 @@ tidy(car::Anova(glmmTMB(lrs ~
   mutate_if(is.numeric, round, 5) %>%
   print()
 
-#model means - no bias adjustment needed
+#model means + bias ajdutmsent
+lme4::VarCorr(list_lrs_disp[[7]])
+sigma <- sqrt(0.048^2)
+
 em1a <- emmeans(list_lrs_disp[[7]],
-                specs = ~ regime * env * pop)
+                specs = ~ regime * env * pop,
+                bias.adjust = T,
+                sigma = sigma)
 
 confint(em1a, calc = c(n = ~.wgt.), adjust = "mvt",
         type = "response")
@@ -595,10 +600,15 @@ tidy(car::Anova(glmmTMB(offspring ~ regime + env + pop + day + regime:env + regi
   mutate_if(is.numeric, round, 5) %>%
   print()
 
-#model means - no bias adjustment needed
+#model means + bias adjustment
+lme4::VarCorr(list_asr[[46]])
+sigma <- sqrt(0.191^2 + 0.047^2)
+
 em1a <- emtrends(list_asr[[46]],
                 specs = ~ regime * env * pop,
-                var = "day")
+                var = "day",
+                bias.adjust = T,
+                sigma = sigma)
 
 confint(em1a, calc = c(n = ~.wgt.), adjust = "mvt",
         type = "response")
