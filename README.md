@@ -3,11 +3,12 @@
 </div>
 
 <!-- badges: start -->
-[![Paper](https://img.shields.io/badge/paper-10.1093%2Fjeb%2Fvoad009-blue)](https://doi.org/10.1093/jeb/voad009)
+[![DOI](https://img.shields.io/badge/DOI-10.1093%2Fjeb%2Fvoad009-blue)](https://doi.org/10.1093/jeb/voad009)
 [![Dryad](https://img.shields.io/badge/Dryad-10.5061%2Fdryad.f1vhhmgz7-blue)](https://doi.org/10.5061/dryad.f1vhhmgz7)
 [![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.10118423-blue)](https://doi.org/10.5281/zenodo.10118423)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-green)](LICENSE-data.md)
 <!-- badges: end -->
-
 Code for the paper:
 
 > Ivimey-Cook, E. R., Piani, C., Hung, W. T., & Berg, E. C. (2024). Genetic
