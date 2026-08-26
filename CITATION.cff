@@ -1,11 +1,38 @@
 cff-version: 1.2.0
 message: "If you use this data or code, please cite it as below."
+type: dataset
 authors:
   - family-names: "Ivimey-Cook"
-    given-names: "Edward"
+    given-names: "Edward R."
     orcid: "https://orcid.org/0000-0003-4910-0443"
+  - family-names: "Piani"
+    given-names: "Claudio"
+  - family-names: "Hung"
+    given-names: "Wei-Tse"
+  - family-names: "Berg"
+    given-names: "Elena C."
 title: "Data from: 'Genetic background and thermal regime influence adaptation to novel environment in the seed beetle, Callosobruchus maculatus'"
 version: Latest
 date-released: 2023-11-13
 doi: 10.5281/zenodo.10118423
 url: "https://github.com/EIvimeyCook/Fluctuating_Beetles"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Ivimey-Cook"
+      given-names: "Edward R."
+      orcid: "https://orcid.org/0000-0003-4910-0443"
+    - family-names: "Piani"
+      given-names: "Claudio"
+    - family-names: "Hung"
+      given-names: "Wei-Tse"
+    - family-names: "Berg"
+      given-names: "Elena C."
+  title: "Genetic background and thermal regime influence adaptation to novel environment in the seed beetle, Callosobruchus maculatus"
+  journal: "Journal of Evolutionary Biology"
+  year: 2024
+  volume: 37
+  issue: 1
+  start: 1
+  end: 13
+  doi: 10.1093/jeb/voad009
