@@ -7,7 +7,6 @@
 [![Dryad](https://img.shields.io/badge/Dryad-10.5061%2Fdryad.f1vhhmgz7-blue)](https://doi.org/10.5061/dryad.f1vhhmgz7)
 [![Zenodo](https://img.shields.io/badge/Zenodo-10.5281%2Fzenodo.10118423-blue)](https://doi.org/10.5281/zenodo.10118423)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE.md)
-[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-green)](LICENSE-data.md)
 <!-- badges: end -->
 Code for the paper:
 
@@ -94,4 +93,3 @@ Edward R. Ivimey-Cook — <e.ivimeycook@gmail.com> —
 
 ## License
 Code is licensed under the [MIT License](LICENSE.md).
-Data are licensed under [CC BY 4.0](LICENSE-data.md).
