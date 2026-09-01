@@ -32,7 +32,7 @@ reproductive success, and age-specific reproduction.
 
 ## Authors
 
-Edward R. Ivimey-Cook, Claudio Piani, Wen Ting Hung, and Elena C. Berg
+Edward R. Ivimey-Cook, Claudio Piani, Wei-Tse Hung, and Elena C. Berg
 
 ## Affiliations
 
@@ -91,3 +91,7 @@ A machine-readable [`CITATION.cff`](CITATION.cff) is included.
 
 Edward R. Ivimey-Cook — <e.ivimeycook@gmail.com> —
 [ORCID 0000-0003-4910-0443](https://orcid.org/0000-0003-4910-0443)
+
+## License
+Code is licensed under the [MIT License](LICENSE.md).
+Data are licensed under [CC BY 4.0](LICENSE-data.md).
