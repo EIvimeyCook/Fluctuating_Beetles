@@ -1,6 +1,6 @@
 # Creative Commons Attribution 4.0 International (CC BY 4.0)
 
-Copyright (c) 2024 Edward R. Ivimey-Cook, Claudio Piani, Wen Ting Hung, and Elena C. Berg
+Copyright (c) 2024 Edward R. Ivimey-Cook, Claudio Piani, Wei-Tse Hung, and Elena C. Berg
 
 The data in this repository are licensed under a Creative Commons Attribution
 4.0 International License.
