@@ -35,4 +35,5 @@ preferred-citation:
   issue: 1
   start: 1
   end: 13
-  doi: 10.1093/jeb/voad009
+  doi: 10.1093/jeb/voad009  
+  license: MIT
