@@ -1,6 +1,6 @@
 # MIT License
 
-Copyright (c) 2024 Edward R. Ivimey-Cook, Claudio Piani, Wen Ting Hung, and Elena C. Berg
+Copyright (c) 2024 Edward R. Ivimey-Cook, Claudio Piani, Wei-Tse Hung, and Elena C. Berg
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
