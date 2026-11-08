@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use this data or code, please cite it as below."
-type: dataset
+message: "If you use this code, please cite it as below."
+type: software
 authors:
   - family-names: "Ivimey-Cook"
     given-names: "Edward R."
@@ -11,7 +11,7 @@ authors:
     given-names: "Wei-Tse"
   - family-names: "Berg"
     given-names: "Elena C."
-title: "Data from: 'Genetic background and thermal regime influence adaptation to novel environment in the seed beetle, Callosobruchus maculatus'"
+title: "Code for: 'Genetic background and thermal regime influence adaptation to novel environment in the seed beetle, Callosobruchus maculatus'"
 version: Latest
 date-released: 2023-11-13
 doi: 10.5281/zenodo.10118423
