@@ -58,9 +58,9 @@ models. It keeps models with zero-inflation and dispersion ratios between 0.80 a
 1.10, a non-missing AIC and passing convergence checks. Uniformity results are
 recorded but not used as a filter. The kept models are sorted by AIC. It opens
 both tables with `View()`, so it needs an interactive session, and writes them to
-`<filename>all.models.csv` and `<filename>final.models.csv`. `filename` is
-required and has no default: the calls at lines 246, 294, 337 and 494 of
-`03-model.R` omit it, so add a filename there or they will stop with an error.
+`<filename>all.models.csv` and `<filename>final.models.csv`. `filename` sets the
+prefix for these files, so give one in each `modelchecker()` call in
+`03-model.R` (lines 246, 294, 337 and 494).
 
 **`02-load_clean_data.R`** — Loading and cleaning data used in the analysis and
 graphing.
@@ -75,15 +75,14 @@ dimorphism contrasts), `lrs.png` (LRS means) and `fitness.png` (LRS and
 age-specific reproduction). Create the `figures/` and `outputs/` folders before
 running; `03-model.R` writes model-selection CSVs to `outputs/`.
 
-**Note:** `04-figures.R` calls `theme_publication()`, a custom ggplot2 theme that
-is not included in this repository. Define it before running the script, for
-example `theme_publication <- function(...) ggplot2::theme_bw(...)`. Figures made
-this way will not look exactly like the published ones.
+**Note:** `04-figures.R` styles the figures with `theme_publication()`, a custom
+ggplot2 theme. Define it before running the script, for example
+`theme_publication <- function(...) ggplot2::theme_bw(...)`; the published
+figures used the custom theme.
 
 ## Running the analysis
 
-The scripts expect this project layout, which differs from how the files sit in
-this repository:
+The scripts are written for this project layout:
 
 ```
 project/
@@ -97,12 +96,10 @@ project/
 Set `project/` as the working directory. All paths are relative to it, and the
 scripts source `code/01-load_packages.R` and `code/02-load_clean_data.R`.
 
-Run `03-model.R` and `04-figures.R` in the same R session, because `04-figures.R`
-uses the fitted models from `03-model.R` and does not source it. Work through them
-interactively, section by section. `03-model.R` uses the name `m1a` for both the
-body mass model and the development time model, so run the body mass section of
-`04-figures.R` after fitting the body mass model and before fitting the
-development time model.
+Work through `03-model.R` and `04-figures.R` interactively in the same R session,
+section by section, as `04-figures.R` plots the models fitted in `03-model.R`.
+The body mass and development time models are both named `m1a`, so plot the
+body mass model before fitting the development time model.
 
 ## R environment
 
